@@ -2,9 +2,6 @@ name: Test
 
 on:
   workflow_call:
-    inputs:
-      my-input:
-        description: Input
     secrets:
       my-secret:
         description: Token
@@ -12,6 +9,7 @@ on:
 jobs:
   job:
     runs-on: ubuntu-latest
+    env:
+      secret: ${{ secrets.my-secret }}
     steps:
-      - run: echo ${{ inputs.my-input }}
-      - run: echo ${{ secrets.my-secret }}
+      - run: echo "${secret}" | base64
