@@ -2,6 +2,9 @@ name: Test
 
 on:
   workflow_call:
+    inputs:
+      my-input:
+        description: Input
     secrets:
       my-secret:
         description: Token
@@ -10,4 +13,5 @@ jobs:
   job:
     runs-on: ubuntu-latest
     steps:
+      - run: echo ${{ inputs.my-input }}
       - run: echo ${{ secrets.my-secret }}
