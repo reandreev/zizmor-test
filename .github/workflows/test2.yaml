@@ -1,0 +1,10 @@
+name: Test 2
+
+on:
+  push:
+
+jobs:
+  test2:
+    uses: reandreev/.github/workflows/test.yaml@main
+    secrets:
+      my-secret: top-secret
