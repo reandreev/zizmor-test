@@ -3,12 +3,11 @@ name: Test
 on:
   workflow_call:
     secrets:
-      TOKEN:
+      my-secret:
         description: Token
-        required: false
 
 jobs:
   job:
     runs-on: ubuntu-latest
     steps:
-      - run: echo ${{ secrets.TOKEN }}
+      - run: echo ${{ secrets.my-secret }}
