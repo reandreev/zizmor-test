@@ -5,6 +5,7 @@ on:
     secrets:
       TOKEN:
         description: Token
+        required: false
 
 jobs:
   job:
