@@ -6,5 +6,7 @@ on:
 jobs:
   run-test:
     uses: reandreev/zizmor-test/.github/workflows/test.yaml@main
+    with:
+      my-input: top-input
     secrets:
       my-secret: top-secret
